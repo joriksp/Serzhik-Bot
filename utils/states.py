@@ -6,3 +6,8 @@ class Form(StatesGroup):
     sex = State()
     about = State()
     photo = State()
+
+class MakeAppeal(StatesGroup):
+    name = State()
+    title = State()
+    message = State()

@@ -1,1 +1,1 @@
-from . import is_admin, is_digit, is_group
+from . import chat_types, is_admin, is_digit

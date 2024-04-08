@@ -5,7 +5,7 @@ from aiogram.types import Message, TelegramObject
 
 from cachetools import TTLCache
 
-class AntifloodMiddleware(BaseMiddleware):
+class ThrottlingMiddleware(BaseMiddleware):
 
     def __init__(self, time_limit: int=2) -> None:
         self.limit = TTLCache(maxsize=10_000, ttl=time_limit)

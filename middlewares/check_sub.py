@@ -3,6 +3,7 @@ from typing import Any, Awaitable, Callable, Dict
 from aiogram import BaseMiddleware
 from aiogram.types import Message, TelegramObject
 
+import config
 from keyboards.inline import sub_channel
 
 class CheckSubscription(BaseMiddleware):
@@ -12,7 +13,7 @@ class CheckSubscription(BaseMiddleware):
         event: Message, 
         data: Dict[str, Any]
     ) -> Any:
-        chat_member = await event.bot.get_chat_member("@sergg_68", event.from_user.id)
+        chat_member = await event.bot.get_chat_member(config.CHANNEL_ID, event.from_user.id)
 
         if chat_member.status == 'left':
             await event.answer(
